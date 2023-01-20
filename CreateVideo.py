@@ -23,9 +23,24 @@ height, width, channels = frame.shape
 size = (width, height)
 print(size)
 
+option = input("Normal(Sim) Ou Invertido(Não): ")
+#"Nascer Do Sol(Sim), Pôr Do Sol(Não): "
+
+start = ""
+end = ""
+rangeVar = ""
+if option.lower() == "não" or option.lower() == "nao":
+    start = count-1
+    end = 0
+    rangeVar = range(start, end, -1)
+elif option.lower() == "sim":
+    start = 0
+    end = count-1
+    rangeVar = range(start, end)
+
 out = cv2.VideoWriter(
     "project.avi", cv2.VideoWriter_fourcc(*'DIVX'), 0.8, size)
-for i in range(0, count-1):  # range(count-1, 0, -1)
+for i in rangeVar:  # range(count-1, 0, -1)
     frame = cv2.imread(Images[i])
     out.write(frame)
 
