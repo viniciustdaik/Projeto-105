@@ -23,7 +23,7 @@ height, width, channels = frame.shape
 size = (width, height)
 print(size)
 
-option = input("Normal(Sim) Ou Invertido(Não): ")
+option = input("Do Início Ao Fim(Sim) Ou Invertido(Não): ")
 #"Nascer Do Sol(Sim), Pôr Do Sol(Não): "
 
 start = ""
